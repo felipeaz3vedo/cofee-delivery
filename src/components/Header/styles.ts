@@ -1,12 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 6.5rem;
-  background-color: ${({ theme }) => theme.colors['base-background']};
+  background-color: ${({ theme }) => theme.colors["base-background"]};
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 10;
 
   > div {
     display: flex;
@@ -22,7 +26,7 @@ export const HeaderButtonsContainer = styled.div`
 `;
 
 interface HeaderButtonProps {
-  variant: 'purple' | 'yellow';
+  variant: "purple" | "yellow";
 }
 
 export const HeaderButton = styled.button<HeaderButtonProps>`
@@ -36,7 +40,7 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   border: none;
   padding: 0 0.5rem;
   position: relative;
-  font-size: ${({ theme }) => theme.textSizes['text-regular-s']};
+  font-size: ${({ theme }) => theme.textSizes["text-regular-s"]};
 
   ${({ variant, theme }) => css`
     background-color: ${theme.colors[`brand-${variant}-light`]};
@@ -44,7 +48,7 @@ export const HeaderButton = styled.button<HeaderButtonProps>`
   `}
 
   ${({ variant, theme }) =>
-    variant === 'purple' &&
+    variant === "purple" &&
     css`
       svg {
         color: ${theme.colors[`brand-purple`]};

@@ -1,4 +1,3 @@
-import { size, transitions } from "polished";
 import styled from "styled-components";
 import { RegularText, TitleText } from "../../../../components/Typography";
 
@@ -11,6 +10,7 @@ export const CofeeCardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
 
   img {
     width: 7.5rem;
@@ -52,4 +52,43 @@ export const Description = styled(RegularText).attrs({
   color: "label"
 })`
   margin-bottom: 2rem;
+`;
+
+export const CardFooter = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 0.188rem;
+
+    p {
+      line-height: 0.75rem;
+    }
+  }
+`;
+
+export const AddCartWrapper = styled.div`
+  width: 7.5rem;
+
+  > button {
+    width: 2.375rem;
+    height: 2.375rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${({ theme }) => theme.colors["brand-purple-dark"]};
+    color: ${({ theme }) => theme.colors["base-card"]};
+    border-radius: 0.375rem;
+    margin: 0.3rem;
+    transition: 0.4s;
+
+    &:hover {
+      background-color: ${({ theme }) => theme.colors["brand-purple"]};
+    }
+  }
 `;
